@@ -1,0 +1,26 @@
+name: Test Repo A
+
+on:
+  workflow_dispatch:
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Workflow Dispatcher
+        # You may pin to the exact commit or the version.
+        # uses: adityakar/workflow-dispatcher@a0f690a2262373956eaee3ef74a01f5afed4ec7c
+        uses: adityakar/workflow-dispatcher@v1.0
+        with:
+          owner: LucasSantosDev
+          repo: repo-B
+          token: ${{ secrets.TOKEN_OTHER_REPO }}
+          # The event type of the repository dispatch
+          event_type: workflow_dispatch
+          # Payload for the repository dispatch event
+          # client_payload: # optional, default is {}
+          # How long to wait between polls (seconds)
+          # wait_time: # optional, default is 10
+          # Maximum amount of time to wait for workflow (seconds)
+          # max_time: # optional, default is 600
