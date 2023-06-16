@@ -15,7 +15,7 @@ jobs:
         with:
           owner: LucasSantosDev
           repo: repo-B
-          token: ${{ secrets.TOKEN_OTHER_REPO }}
+          token: "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"
           # The event type of the repository dispatch
           event_type: workflow_dispatch
           # Payload for the repository dispatch event
