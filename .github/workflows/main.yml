@@ -14,6 +14,7 @@ jobs:
         repo: ['LucasSantosDev/repo-B']
     timeout-minutes: 5
     steps:
+      - run: "echo ${{ secrets.dev.USERNAME }}"
       - name: Dispatch to workflows
         run: |
             curl -H "Accept: application/vnd.github.everest-preview+json" \
