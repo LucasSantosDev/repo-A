@@ -5,6 +5,7 @@ on:
 
 jobs:
   dispatch:
+    environment: hml
     name: Dispatch
     env:
       PACKAGES_TO_UPGRADE: ${{ needs.run_publish.outputs.packages }}
@@ -15,7 +16,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - run: |
-          echo "${{ secrets.dev.USERNAME }}"
+          echo "${{ secrets.USERNAME }}"
       - name: Dispatch to workflows
         run: |
             curl -H "Accept: application/vnd.github.everest-preview+json" \
